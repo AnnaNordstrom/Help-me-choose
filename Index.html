@@ -6,16 +6,16 @@
     <link href="./main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Help me choose beteween..</h1>
+    <h1>Vem skall skriva protokoll?</h1>
     <div class="inputSection">
       <div class="inputs">
-      <img src="http://www.utinaturen.fi/documents/10550/11729/webatt_20050111_093606_255755.jpg" alt="relaterad bild"</img>
+         <img src="http://www.habo.se/images/18.3133aa301519eb47b2d7fc84/1450344204998/penna_papper-%C2%B4572x286.jpg" alt="relaterad bild"</img>
         <input placeholder="Something"></input>
       </div>
       <button class="addOption">Add</button>
     </div>
     <div class="resultSection"></div>
-    <button>Go!</button>
+    <button class="submit">Go!</button>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
@@ -25,8 +25,22 @@
       var add_option = function() {
         $('.inputs').append('<input></input>')
       }
-
       $('.addOption').click(add_option)
+
+      var options = []
+      var submit = function() {
+        console.log('anna')
+        $('.inputSection').hide()
+        $('.resultSection').css('diplay', 'flex')
+        $('input').each(function() {
+          options.push($(this).val())
+        })
+        var winner = options[Math.floor(Math.random() * options.length)]
+        console.log(winner)
+        $('.resultSection').text(winner)
+        $('.resultSection').show()
+      }
+      $('.submit').click(submit)
     })
     </script>
   </body>

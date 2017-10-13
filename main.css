@@ -22,7 +22,6 @@ h1 {
   width: inherit;
   display: flex;
   flex-direction: column;
-
 }
 input {
   margin-top: 10px;
